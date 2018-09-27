@@ -17,7 +17,7 @@ namespace Patungan
         protected override void OnAppearing()
         {
 
-            var m = new NavigationPage(new CreatePaymentPage());
+            var m = new NavigationPage(new PaymentOverviewPage());
         }
     }
 }

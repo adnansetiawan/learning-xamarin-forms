@@ -10,7 +10,8 @@ namespace Patungan
 
         public PMainPage()
         {
-            _navCreatePaymentPage = new PNavigationPage(new CreatePaymentPage());
+            _navCreatePaymentPage = new PNavigationPage(new PaymentOverviewPage());
+            _navCreatePaymentPage.Title = "Overview";
             Children.Add(_navCreatePaymentPage);
         }
     }
