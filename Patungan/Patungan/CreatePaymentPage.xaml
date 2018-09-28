@@ -5,5 +5,6 @@
              xmlns:custom="clr-namespace:Patungan" 
              x:Class="Patungan.CreatePaymentPage">
     <custom:MasterPage.Content>
+        
     </custom:MasterPage.Content>
 </custom:MasterPage>

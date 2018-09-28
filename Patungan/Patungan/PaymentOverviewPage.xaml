@@ -2,12 +2,16 @@
 <custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+             xmlns:viewModels="clr-namespace:Patungan.Models"
              xmlns:custom="clr-namespace:Patungan" 
              x:Class="Patungan.PaymentOverviewPage">
+     <custom:MasterPage.BindingContext>
+        <viewModels:PaymentOverviewPageViewModel />
+    </custom:MasterPage.BindingContext>
     <custom:MasterPage.Content>
         <Grid>
            <StackLayout>
-           <ListView Margin="0,10,0,0" x:Name="PaymentUserListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
+           <ListView Margin="5" x:Name="PaymentUserListView" ItemsSource="{Binding PaymentOverviewViewModels}" RefreshCommand="{Binding RefreshPaymentItems}" IsPullToRefreshEnabled="true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -18,6 +22,7 @@
                                         <Grid.RowDefinitions>
     <RowDefinition Height="*" />
     <RowDefinition Height="*" />
+    <RowDefinition Height="auto" />
   </Grid.RowDefinitions>
   <Grid.ColumnDefinitions>
     <ColumnDefinition Width="auto" />
@@ -30,7 +35,8 @@
                                      <Label Text="{Binding Status}" Grid.Row="1" Grid.Column="1"/> 
                                      <Label Margin="5,5,5,0" HorizontalTextAlignment="End" Text="{Binding TotalAmountDisplay}" Grid.Row="0" Grid.Column="2"/> 
                                      <Label Margin="5,0,5,0" Text="{Binding TransactionDateDisplay}" HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="2"/> 
-                                    
+                                     <BoxView Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                                     
                                             
                                         </Grid>
                                     </StackLayout>
@@ -40,8 +46,8 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-             <AbsoluteLayout Margin="0,0,0,15"  BackgroundColor="Blue" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
-            <Button BackgroundColor="Maroon" Text="OK" Clicked="GoToCreatePaymentPage" />
+             <AbsoluteLayout Margin="0,0,0,15"  BackgroundColor="Transparent" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="40" WidthRequest="40" >
+            <Button WidthRequest="40" HeightRequest="40" BorderRadius="20" BackgroundColor="Red" TextColor="White" Text="+" Clicked="GoToCreatePaymentPage" />
             </AbsoluteLayout>
         
        </Grid>
