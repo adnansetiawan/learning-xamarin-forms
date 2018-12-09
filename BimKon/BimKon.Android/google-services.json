@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "18130551432",
+    "firebase_url": "https://bimkon-1540534201577.firebaseio.com",
+    "project_id": "bimkon-1540534201577",
+    "storage_bucket": "bimkon-1540534201577.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18130551432:android:a4a86d2dff85663e",
+        "android_client_info": {
+          "package_name": "BimKon.Android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18130551432-n1tsck3965cafdf30joe40t0p5iagm3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp28BiQpbC7aAylXUCHey___8WSLJEUVQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

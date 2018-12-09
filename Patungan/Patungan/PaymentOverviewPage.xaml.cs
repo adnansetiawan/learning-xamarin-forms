@@ -33,7 +33,6 @@ namespace Patungan
         protected override void OnAppearing()
         {
 
-
             _viewModel.RefreshPaymentItems?.Execute(null);
 
         }
