@@ -17,10 +17,12 @@ namespace BimKon.Core
             InitializeComponent();
 
             MainPage = new PMainPage();
+            //MainPage = new MainPage();
         }
 
         protected override void OnStart()
         {
+            DependencyService.Register<CsvHelper>();
             // Handle when your app starts
         }
 
@@ -38,6 +40,30 @@ namespace BimKon.Core
             get
             {
                 return CrossVersion.Current.Version;
+            }
+        }
+        static ObservableCollection<SekolahDetailViewModel> _sekolahItems;
+        public static ObservableCollection<SekolahDetailViewModel> SekolahItems
+        {
+            get
+            {
+                if (_sekolahItems == null)
+                {
+                    _sekolahItems = new ObservableCollection<SekolahDetailViewModel>(Repositories.SekolahDataSeed.GetAll());
+                }
+                return _sekolahItems;
+            }
+        }
+        static ObservableCollection<MinatViewModel> _minatItems;
+        public static ObservableCollection<MinatViewModel> MinatItems
+        {
+            get
+            {
+                if (_minatItems == null)
+                {
+                    _minatItems = new ObservableCollection<MinatViewModel>(Repositories.MinatDataSeed.GetAll());
+                }
+                return _minatItems;
             }
         }
     }

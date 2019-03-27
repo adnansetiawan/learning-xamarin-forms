@@ -9,8 +9,7 @@ using Android.OS;
 using BimKon.Core;
 using FFImageLoading.Forms.Droid;
 using Android.Content;
-using Android.Gms.Auth.Api.SignIn;
-using Android.Gms.Auth.Api;
+
 using Xamarin.Forms;
 
 namespace BimKon.Droid
@@ -27,7 +26,6 @@ namespace BimKon.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            DependencyService.Register<IGoogleManager, GoogleManager>();
 
             LoadApplication(new App());
             CachedImageRenderer.Init(true);
@@ -40,11 +38,7 @@ namespace BimKon.Droid
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            if (requestCode == 1)
-            {
-                GoogleSignInResult result = Auth.GoogleSignInApi.GetSignInResultFromIntent(data);
-                GoogleManager.Instance.OnAuthCompleted(result);
-            }
+
         }
     }
 

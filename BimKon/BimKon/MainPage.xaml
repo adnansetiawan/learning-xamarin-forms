@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Patungan" x:Class="BimKon.Core.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-</ContentPage>
+<custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core" x:Class="BimKon.Core.MainPage">
+    <custom:MasterPage.Content>
+        <Grid>
+            <StackLayout VerticalOptions="FillAndExpand" Padding="20,0,20,0" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClickMengenalDiri" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5" HeightRequest="38" Text="Mengenal Diri" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClickSekolahLanjutan" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5" HeightRequest="38" Text="Sekolah Lanjutan" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5" HeightRequest="38" Text="Bidang Peminatan" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5" HeightRequest="38" Text="Bidang Pekerjaan" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5" HeightRequest="38" Text="Chat via Whatsapp" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5" HeightRequest="38" Text="Tentang Aplikasi" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </custom:MasterPage.Content>
+</custom:MasterPage>

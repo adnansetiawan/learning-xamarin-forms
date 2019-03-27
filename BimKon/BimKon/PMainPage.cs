@@ -6,12 +6,23 @@ namespace BimKon.Core
 {
     public class PMainPage : BottomBarPage
     {
+        private PNavigationPage _mainPage;
+        private PNavigationPage _sekolahPage;
         private PNavigationPage _navMANOverviewPage;
         private PNavigationPage _navSMAOverviewPage;
         private PNavigationPage _navSMKOverviewPage;
         public PMainPage()
         {
-            _navSMKOverviewPage = new PNavigationPage(new SekolahOverviewPage(Enums.SchoolType.SMK));
+
+            _mainPage = new PNavigationPage(new MainPage());
+            _mainPage.Title = "Informasi";
+            Children.Add(_mainPage);
+            _sekolahPage = new PNavigationPage(new SekolahOverviewPage());
+            _sekolahPage.Title = "Sekolah";
+            Children.Add(_sekolahPage);
+
+
+            /*_navSMKOverviewPage = new PNavigationPage(new SekolahOverviewPage(Enums.SchoolType.SMK));
             _navSMKOverviewPage.Title = "SMK";
 
             Children.Add(_navSMKOverviewPage);
@@ -22,8 +33,9 @@ namespace BimKon.Core
 
             _navMANOverviewPage = new PNavigationPage(new SekolahOverviewPage(Enums.SchoolType.MAN));
             _navMANOverviewPage.Title = "MAN";
-            Children.Add(_navMANOverviewPage);
+            Children.Add(_navMANOverviewPage);*/
         }
+
     }
 }
 
