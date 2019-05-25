@@ -4,22 +4,34 @@
         <viewModels:KuliahOverviewPageViewModel />
     </custom:MasterPage.BindingContext>
     <custom:MasterPage.Content>
-        <Grid>
-            <StackLayout VerticalOptions="FillAndExpand" Padding="20,0,20,0" HorizontalOptions="FillAndExpand" Orientation="Vertical">
-                <ListView x:Name="SekolahListView" ItemsSource="{Binding SekolahItems}" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
+        <Grid BackgroundColor="#33c5ed">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" Grid.Row="0">
+                <SearchBar HeightRequest="38" x:Name="SearchText" HorizontalOptions="FillAndExpand" Placeholder="Cari" TextChanged="SearchBar_TextChanged" VerticalOptions="Start" BackgroundColor="#33c5ed" />
+            </StackLayout>
+           
+        <StackLayout Grid.Row="1">
+            <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="20,0,20,0" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                <ListView x:Name="SekolahListView" GroupDisplayBinding="{Binding Name}" IsGroupingEnabled="true">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Margin="5" HeightRequest="38" Text="{Binding Name}" TextColor="#4d555e" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
-                                    <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
-                                </StackLayout>
-                                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
-                            </ViewCell>
+                            <TextCell Text="{Binding .}" TextColor="#4d555e" DetailColor="#503026" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    <!-- Group Header Customization-->
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" TextColor="White" DetailColor="#503026" />
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+                    <!-- End Group Header Customization -->
                 </ListView>
             </StackLayout>
-        </Grid>
+        </StackLayout>
+       </Grid>
+        
     </custom:MasterPage.Content>
 </custom:MasterPage>

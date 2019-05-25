@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using static BimKon.Core.Enums;
 
 namespace BimKon.Core.Models
@@ -14,13 +15,16 @@ namespace BimKon.Core.Models
         public string Name { get; set; }
         public List<GroupKuliahViewModel> Groups { get; set; }
     }
-    public class GroupKuliahViewModel
+
+    public class GroupKuliahViewModel : ObservableCollection<string>
     {
 
         public string Id { get; set; }
         public SchoolType TipeSekolah { get; set; }
         public string Name { get; set; }
-        public string[] Jurusans { get; set; }
+        //public string[] Jurusans { get; set; }
 
     }
+
+
 }

@@ -13,12 +13,13 @@ namespace BimKon.Core
         public KuliahOverviewPage()
         {
             InitializeComponent();
-            Title = "Sekolah";
+            Title = "Peminatan";
 
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            _viewModel.Init?.Execute(null);
+            SekolahListView.ItemsSource = _viewModel.GroupItems;
 
         }
         void OnClickSekolah(object sender, EventArgs e)
@@ -38,6 +39,14 @@ namespace BimKon.Core
             }
             _viewModel = vm;
             _viewModel.Navigation = Navigation;
+        }
+
+        void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            _viewModel?.Search?.Execute(e.NewTextValue);
+            SekolahListView.ItemsSource = _viewModel.GroupItems;
+
         }
     }
 }

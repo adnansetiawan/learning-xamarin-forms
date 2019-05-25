@@ -15,21 +15,55 @@ namespace BimKon.Core.Models
 {
     public class KuliahOverviewPageViewModel : BaseViewModel
     {
-        private readonly ISekolahKuliahDataSeed _sekolahKuliahDataSeed;
+        private readonly IKuliahDataSeed _kuliahDataSeed;
         public KuliahOverviewPageViewModel()
         {
-            _sekolahKuliahDataSeed = new SekolahKuliahDataSeed();
-            _sekolahKuliahDataSeed.Seed();
-            SekolahItems = _sekolahKuliahDataSeed.SekolahKuliahItems;
+            _kuliahDataSeed = new KuliahDataSeed();
 
 
         }
-
-        private ObservableCollection<SekolahKuliahViewModel> _sekolahItems;
-        public ObservableCollection<SekolahKuliahViewModel> SekolahItems
+        private ICommand _init;
+        public ICommand Init
         {
-            get => _sekolahItems;
-            set => SetProperty(ref _sekolahItems, value, nameof(SekolahItems));
+            get
+            {
+
+                _init = _init ?? new Command(() =>
+                {
+                    _kuliahDataSeed.Seed();
+                    AllGroupItems = _kuliahDataSeed.GroupKuliahItems;
+                    GroupItems = AllGroupItems;
+
+                });
+                return _init;
+            }
+        }
+        private ICommand _search;
+        public ICommand Search
+        {
+            get
+            {
+
+                _search = _search ?? new Command<string>((keyword) =>
+                {
+                    if (string.IsNullOrEmpty(keyword))
+                    {
+                        GroupItems = AllGroupItems;
+                        return;
+                    }
+                    var items = AllGroupItems.Where(x => x.Any(p => p.ToLower().Contains(keyword.ToLower()))).ToArray();
+                    GroupItems = new ObservableCollection<GroupKuliahViewModel>(items);
+                });
+                return _search;
+            }
+        }
+        private ObservableCollection<GroupKuliahViewModel> AllGroupItems;
+
+        private ObservableCollection<GroupKuliahViewModel> _groupItems;
+        public ObservableCollection<GroupKuliahViewModel> GroupItems
+        {
+            get => _groupItems;
+            set => SetProperty(ref _groupItems, value, nameof(GroupItems));
         }
 
     }
