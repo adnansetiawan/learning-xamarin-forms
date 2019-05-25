@@ -3,6 +3,30 @@ using CsvHelper.Configuration.Attributes;
 
 namespace BimKon.Core.Models
 {
+    public class BidangDanProgramKeahlianCsv
+    {
+        [Name("bidang")]
+        public string Bidang { get; set; }
+        [Name("program")]
+        public string Program { get; set; }
+
+    }
+    public class BidangKeahlianCsv
+    {
+        [Name("kode")]
+        public string Kode { get; set; }
+        [Name("nama")]
+        public string Nama { get; set; }
+
+    }
+    public class ProgramKeahlianCsv
+    {
+        [Name("kode")]
+        public string Kode { get; set; }
+        [Name("nama")]
+        public string Nama { get; set; }
+
+    }
     public class SekolahDetailCsv
     {
         [Name("nama")]
@@ -25,6 +49,8 @@ namespace BimKon.Core.Models
         public string Kecamatan { get; set; }
         [Name("kabupaten")]
         public string Kabupaten { get; set; }
+        [Name("jurusan")]
+        public string Jurusan { get; set; }
 
 
     }

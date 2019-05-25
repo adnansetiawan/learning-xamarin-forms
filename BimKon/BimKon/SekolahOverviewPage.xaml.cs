@@ -15,6 +15,7 @@ namespace BimKon.Core
         public SekolahOverviewPage()
         {
             InitializeComponent();
+            Title = "Sekolah Lanjutan";
 
         }
 
@@ -30,13 +31,13 @@ namespace BimKon.Core
             _viewModel.Navigation = Navigation;
         }
 
-        async void Handle_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        /*async void Handle_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             var item = ((ListView)sender).SelectedItem as JurusanViewModel;
             if (item == null)
                 return;
             await Navigation.PushAsync(new PekerjaanPage(item), true);
-        }
+        }*/
 
         private void RefreshListViewData(string filterBy = null)
         {
@@ -53,12 +54,12 @@ namespace BimKon.Core
             if (JenjangPendidikanGroups.Children.Count == 0)
             {
                 var jenjangPendidikanGroups = new string[] { "Semua", "SMA", "SMK", "MA" };
-                var buttonSemua = new Button { TextColor = Color.White, FontSize = 8, Text = $"Semua({App.SekolahItems.Count()})" };
+                var buttonSemua = new Button { TextColor = Color.White, FontSize = 10, Text = $"Semua({App.SekolahItems.Count()})" };
                 buttonSemua.BackgroundColor = Color.FromHex("#1a7cc8");
-                buttonSemua.CornerRadius = 15;
+                buttonSemua.CornerRadius = 12;
                 buttonSemua.VerticalOptions = LayoutOptions.CenterAndExpand;
                 buttonSemua.WidthRequest = 80;
-                buttonSemua.HeightRequest = 30;
+                buttonSemua.HeightRequest = 40;
                 buttonSemua.Clicked += (sender, e) =>
                 {
                     _viewModel.FilterByJenjangPendidikan?.Execute("semua");
@@ -67,13 +68,13 @@ namespace BimKon.Core
                 var data = App.SekolahItems.GroupBy(x => x.JenjangPendidikan);
                 foreach (var jjp in data)
                 {
-                    var button = new Button { TextColor = Color.White, FontSize = 8, Text = $"{jjp.Key}({jjp.Count()}) " };
+                    var button = new Button { TextColor = Color.White, FontSize = 10, Text = $"{jjp.Key}({jjp.Count()}) " };
 
                     button.BackgroundColor = jjp.First().CategoryColor;
-                    button.CornerRadius = 15;
+                    button.CornerRadius = 12;
                     button.VerticalOptions = LayoutOptions.CenterAndExpand;
                     button.WidthRequest = 80;
-                    button.HeightRequest = 30;
+                    button.HeightRequest = 40;
                     button.Clicked += (sender, e) =>
                     {
                         _viewModel.FilterByJenjangPendidikan?.Execute(jjp.Key);

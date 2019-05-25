@@ -7,5 +7,8 @@ namespace BimKon.Core
     public interface ICsvHelper
     {
         List<SekolahDetailCsv> ReadSekolahDetail();
+        List<BidangKeahlianCsv> ReadBidangKeahlian();
+        List<ProgramKeahlianCsv> ReadProgramKeahlian();
+        List<BidangDanProgramKeahlianCsv> ReadKeahliandDanProgram();
     }
 }

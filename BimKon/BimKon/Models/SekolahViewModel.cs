@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace BimKon.Core.Models
 {
     public class SekolahViewModel
@@ -7,4 +9,5 @@ namespace BimKon.Core.Models
         public string Name { get; set; }
 
     }
+
 }

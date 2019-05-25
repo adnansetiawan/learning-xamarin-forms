@@ -16,7 +16,7 @@
             <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
                 <StackLayout  Orientation="Horizontal"  BackgroundColor="#33c5ed" x:Name="JenjangPendidikanGroups" HorizontalOptions="CenterAndExpand">
                 </StackLayout>
-                <ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SekolahItems}" x:Name="SekolahListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None" ItemTapped="Handle_ItemSelected">
+                <ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SekolahItems}" x:Name="SekolahListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
                    
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -36,13 +36,15 @@
                                                     <Label Text="{Binding Address.DisplayedAddress}" HorizontalOptions="StartAndExpand" FontSize="10" />
                                                 </StackLayout>
                                             </StackLayout>
-                                            <StackLayout Orientation="Vertical" Margin="0,15,0,0" HorizontalOptions="End" VerticalOptions="End">
-                                            <Frame HasShadow="false" HeightRequest="30" WidthRequest="80" CornerRadius="18" Margin="0" Padding="3" BackgroundColor="{Binding CategoryColor}">
+                                            <!--<StackLayout Orientation="Vertical" Margin="0,15,0,0" HorizontalOptions="StartAndExpand">-->
+                                                    <Editor Text="{Binding Jurusan}" IsEnabled="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="12"  />
+                                               
+                                            <!--<Frame HasShadow="false" HeightRequest="30" WidthRequest="80" CornerRadius="18" Margin="0" Padding="3" BackgroundColor="{Binding CategoryColor}">
                                                 <StackLayout Orientation="Vertical" Spacing="0">
                                                     <Label Text="Detail" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" TextColor="White" MinimumWidthRequest="70" HorizontalOptions="Center" />
                                                  </StackLayout>
-                                            </Frame>
-                                        </StackLayout>
+                                            </Frame>-->
+                                        <!--</StackLayout>-->
                                         </StackLayout>
                                     </Frame>
                                 </StackLayout>

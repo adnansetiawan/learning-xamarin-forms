@@ -20,10 +20,10 @@ namespace BimKon.Core.Repositories
             result.Add(new MinatViewModel
             {
                 Tipe = "Investigasi (Intelektual)",
-                Minat = "Anda suka menemukan ide dan meneliti, mengamati,menginvestigasi,dan bereksperimen,mengajukan pertanyaan, dan menyelesaikan pertanyaan",
+                Minat = "Anda suka menemukan ide dan meneliti, mengamati, menginvestigasi, dan bereksperimen, mengajukan pertanyaan, dan menyelesaikan pertanyaan",
                 MataPelajaran = "Bahasa Inggris, Matematika, Sains, Komputer, Teknologi",
                 Pekerjaan = "Ilmu pengetahuan,teknisi penelitian,laboratorium medis,pertanian,pekerjaan medis dan kesehatan,ahli kimia, ilmuan kelautan, ahli kehutanan, ahli zoology,dokter gigi,dokter umum",
-                Keterampilan = "Berfikir analitis dan logis, komputasi,berkomunikasi dengan menulis dan berbicara, merancang, merumuskan, menghitung, mendiagnosa,bereksperimen dan menyelidiki"
+                Keterampilan = "Berfikir analitis dan logis, komputasi,berkomunikasi dengan menulis dan berbicara, merancang, merumuskan, menghitung, mendiagnosa, bereksperimen dan menyelidiki"
             });
             result.Add(new MinatViewModel
             {
@@ -55,7 +55,7 @@ namespace BimKon.Core.Repositories
                 Minat = "Tipe model ini memiliki anda suka bekerja di dalam ruangan dan melakukan tugas-tugas yang melibatkan pengorganisasian dan akurasi, mengikuti prosedur, bekerja dengan data atau angka, merencanakan pekerjaan, dan acara.",
                 Keterampilan = "Tipe ini terampil dalam menghitung, menyapa, melakukan pengetikan, merekam, dan menyimpan catatan, memperhatikan secara detail, sistematis, dan perhitungan, menangani uang, mengatur, bekerja secara mandiri. ",
                 Pekerjaan = "Sekretaris, resepsionis, pekerjaan kantor, pustakwan, petugas bank, operator komputer, kasir, statistika, pemegang buku, pegawai arsip, petugas pengiriman dan pekerjaan lain yang sejenis.",
-                MataPelajaran = "Bahasa inggris,Matematika,Studi bisnis,Akuntansi,Ekonomi,Computer"
+                MataPelajaran = "Bahasa inggris, Matematika, Studi bisnis, Akuntansi, Ekonomi, Computer"
             });
             return result;
         }

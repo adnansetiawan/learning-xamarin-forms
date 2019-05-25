@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BimKon.Core.PeminatanPage" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core">
+    <custom:MasterPage.BindingContext>
+        <viewModels:KeahlianPageViewModel />
+    </custom:MasterPage.BindingContext>
+    <custom:MasterPage.Content>
+        <Grid BackgroundColor="#33c5ed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" Grid.Row="0">
+                <SearchBar HeightRequest="38" x:Name="SearchText" HorizontalOptions="FillAndExpand" Placeholder="Cari" TextChanged="SearchBar_TextChanged" VerticalOptions="Start" BackgroundColor="#33c5ed" />
+            </StackLayout>
+            <ListView  Grid.Row="1" BackgroundColor="#33c5ed" ItemsSource="{Binding Keahlians}" x:Name="KeahlianListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="Transparent" Margin="10,6,10,6" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+                                <Frame CornerRadius="12" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal" Spacing="5">
+                                            <StackLayout Orientation="Vertical" Spacing="2" Margin="0,0,0,0">
+                                                <Label Text="{Binding Nama}" TextColor="#3e89d5" LineBreakMode="TailTruncation" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" FontAttributes="Bold" />
+                                                <Label Text="Program" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="12" />
+                                                </StackLayout>
+                                          </StackLayout>
+                                               <BoxView BackgroundColor="Gray" Opacity="0.2" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+                                                <Editor Text="{Binding ProgramAsString}" IsEnabled="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="12" />
+                                 
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </custom:MasterPage.Content>
+</custom:MasterPage>

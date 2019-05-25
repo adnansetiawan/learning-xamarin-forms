@@ -10,6 +10,54 @@ namespace BimKon.Core
 {
     public class CsvHelper : ICsvHelper
     {
+        public List<BidangKeahlianCsv> ReadBidangKeahlian()
+        {
+            var result = new List<BidangKeahlianCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.BidangKeahlian.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<BidangKeahlianCsv>();
+                result = records.ToList();
+            }
+            return result;
+        }
+
+        public List<BidangDanProgramKeahlianCsv> ReadKeahliandDanProgram()
+        {
+            var result = new List<BidangDanProgramKeahlianCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.BidangDanProgramKeahlian.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<BidangDanProgramKeahlianCsv>();
+                result = records.ToList();
+            }
+            return result;
+        }
+
+        public List<ProgramKeahlianCsv> ReadProgramKeahlian()
+        {
+            var result = new List<ProgramKeahlianCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.ProgramKeahlian.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<ProgramKeahlianCsv>();
+                result = records.ToList();
+            }
+            return result;
+        }
+
         public List<SekolahDetailCsv> ReadSekolahDetail()
         {
             var result = new List<SekolahDetailCsv>();

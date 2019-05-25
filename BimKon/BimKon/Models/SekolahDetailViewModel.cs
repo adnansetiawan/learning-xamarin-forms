@@ -1,8 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace BimKon.Core.Models
 {
+    public class ProgramViewModel
+    {
+        public string Nama { get; set; }
+    }
+    public class KeahlianViewModel
+    {
+        public KeahlianViewModel()
+        {
+            Programs = new List<ProgramViewModel>();
+        }
+        public string Nama { get; set; }
+        public List<ProgramViewModel> Programs { get; set; }
+        public string ProgramAsString
+        {
+            get
+            {
+                return String.Join(",", Programs.Select(x => x.Nama).ToArray());
+            }
+        }
+
+    }
     public class SekolahDetailViewModel
     {
         public string Id { get; set; }
@@ -11,6 +34,7 @@ namespace BimKon.Core.Models
         public string JenjangPendidikan { get; set; }
         public string StatusSekolah { get; set; }
         public string WaktuPenyelenggaraan { get; set; }
+        public string Jurusan { get; set; }
         public AddressViewModel Address { get; set; }
         public Color CategoryColor
         {

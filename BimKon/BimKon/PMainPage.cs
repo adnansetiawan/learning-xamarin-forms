@@ -8,9 +8,7 @@ namespace BimKon.Core
     {
         private PNavigationPage _mainPage;
         private PNavigationPage _sekolahPage;
-        private PNavigationPage _navMANOverviewPage;
-        private PNavigationPage _navSMAOverviewPage;
-        private PNavigationPage _navSMKOverviewPage;
+        private PNavigationPage _pekerjaanPage;
         public PMainPage()
         {
 
@@ -20,7 +18,9 @@ namespace BimKon.Core
             _sekolahPage = new PNavigationPage(new SekolahOverviewPage());
             _sekolahPage.Title = "Sekolah";
             Children.Add(_sekolahPage);
-
+            _sekolahPage = new PNavigationPage(new SekolahOverviewPage());
+            _sekolahPage.Title = "Sekolah";
+            Children.Add(_sekolahPage);
 
             /*_navSMKOverviewPage = new PNavigationPage(new SekolahOverviewPage(Enums.SchoolType.SMK));
             _navSMKOverviewPage.Title = "SMK";
