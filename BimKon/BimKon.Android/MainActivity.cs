@@ -28,7 +28,8 @@ namespace BimKon.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             LoadApplication(new App());
-            CachedImageRenderer.Init(true);
+            FFImageLoading.Forms.CachedImage.FixedOnMeasureBehavior = true;
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             this.SupportActionBar.DisplayOptions = (int)ActionBarDisplayOptions.HomeAsUp;
             this.Window.ClearFlags(WindowManagerFlags.Fullscreen);
 

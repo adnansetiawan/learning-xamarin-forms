@@ -46,4 +46,14 @@
     <EmbeddedResource Include="BidangKeahlian.csv" />
     <EmbeddedResource Include="ProgramKeahlian.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage %28copy%29.xaml.cs">
+      <DependentUpon>PekerjaanOverview.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="PekerjaanOverview.xaml.cs">
+      <DependentUpon>PekerjaanOverview.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

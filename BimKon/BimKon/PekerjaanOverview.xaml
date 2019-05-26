@@ -1,78 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core" x:Class="BimKon.Core.MainPage">
+<custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core" x:Class="BimKon.Core.PekerjaanOverview">
     <custom:MasterPage.Content>
-        <Grid BackgroundColor="#33c5ed">
+        <Grid>
             <StackLayout VerticalOptions="FillAndExpand" Padding="20,0,20,0" HorizontalOptions="FillAndExpand" Orientation="Vertical">
                 <StackLayout Orientation="Vertical">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickMengenalDiri" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnRekayasaClick" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Mengenal Diri" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Label Margin="5" HeightRequest="38" Text="Teknologi dan Rekayasa" TextColor="#33c5ed" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
                         <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickSekolahLanjutan" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnAgrobisnisClick" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Sekolah Lanjutan" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Label Margin="5" HeightRequest="38" Text="Agrobisnis dan Agroteknologi" TextColor="#33c5ed" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
                         <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickPeminatan" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnKesehatanClick" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Bidang Peminatan" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Label Margin="5" HeightRequest="38" Text="Kesehatan" TextColor="#33c5ed" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
                         <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
                      <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickKuliah" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnEkonomiClick" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Bidang Kuliah" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Label Margin="5" HeightRequest="38" Text="Bisnis dan Manajemens" TextColor="#33c5ed" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
                         <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
                      <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickPekerjaan" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnSeniClick" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Lingkup Pekerjaan" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Label Margin="5" HeightRequest="38" Text="Seni dan Pariwisata" TextColor="#33c5ed" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
                         <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
                      <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickChat" NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer Tapped="OnITClick" NumberOfTapsRequired="1" />
                     </StackLayout.GestureRecognizers>
                     <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Chat via Whatsapp" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
+                        <Label Margin="5" HeightRequest="38" Text="Teknologi Informasi" TextColor="#33c5ed" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
                         <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
                 </StackLayout>
-                <StackLayout Orientation="Vertical">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnClickAbout" NumberOfTapsRequired="1" />
-                    </StackLayout.GestureRecognizers>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Margin="5" HeightRequest="38" Text="Tentang Aplikasi"  TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="14" />
-                        <Image Source="Icons/ic_arrow_right_lightblue" VerticalOptions="CenterAndExpand" HeightRequest="14" WidthRequest="14" HorizontalOptions="End" />
-                    </StackLayout>
-                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
-                </StackLayout>
+               
             </StackLayout>
         </Grid>
     </custom:MasterPage.Content>

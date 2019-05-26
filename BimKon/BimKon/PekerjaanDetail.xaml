@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom:MasterPage xmlns:custom="clr-namespace:BimKon.Core" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BimKon.Core.PekerjaanDetail">
+    <custom:MasterPage.Content>
+        <Grid>
+             <ScrollView x:Name="pekerjaanScrool"  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+        <StackLayout x:Name="pekerjaanLayout" Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+       </StackLayout>
+          
+        </ScrollView>
+        </Grid>  
+    </custom:MasterPage.Content>
+</custom:MasterPage>

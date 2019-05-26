@@ -33,6 +33,10 @@ namespace BimKon.Core
         {
             Navigation.PushAsync(new KuliahOverviewPage(), true);
         }
+        void OnClickPekerjaan(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PekerjaanOverview(), true);
+        }
         void OnClickAbout(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ProfilePage(), true);

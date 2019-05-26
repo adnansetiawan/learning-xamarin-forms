@@ -156,6 +156,20 @@
     <AndroidResource Include="Resources\drawable-xhdpi\screen.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\screen.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\screen.png" />
+    <AndroidResource Include="Resources\drawable\p_agrobisnis.png" />
+    <AndroidResource Include="Resources\drawable\p_ekonomi.png" />
+    <AndroidResource Include="Resources\drawable\p_rekayasa_1.png" />
+    <AndroidResource Include="Resources\drawable\p_rekayasa_2.png" />
+    <AndroidResource Include="Resources\drawable\p_rekayasa_3.png" />
+    <AndroidResource Include="Resources\drawable\p_rekayasa_4.png" />
+    <AndroidResource Include="Resources\drawable\p_rekayasa_5.png" />
+    <AndroidResource Include="Resources\drawable\p_rekayasa_6.png" />
+    <AndroidResource Include="Resources\drawable\p_seni_1.png" />
+    <AndroidResource Include="Resources\drawable\p_seni_2.png" />
+    <AndroidResource Include="Resources\drawable\p_seni_3.png" />
+    <AndroidResource Include="Resources\drawable\p_it_1.png" />
+    <AndroidResource Include="Resources\drawable\p_it_2.png" />
+    <AndroidResource Include="Resources\drawable\p_kesehatan.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
