@@ -5,28 +5,29 @@
     </custom:MasterPage.BindingContext>
     <custom:MasterPage.Content>
         <Grid Padding="20">
-            <StackLayout>
+            <ScrollView>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal" Spacing="10">
-                        <Label Text="Telp" />
-                        <Label x:Name="Telp" />
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Telp   :" />
+                            <Label x:Name="Telp" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Fax    :" />
+                            <Label x:Name="Fax" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Email  :" />
+                            <Label x:Name="Email" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Alamat :" />
+                            <Label x:Name="Alamat" />
+                        </StackLayout>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Spacing="10">
-                        <Label Text="Fax" />
-                        <Label x:Name="Fax" />
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Spacing="10">
-                        <Label Text="Email" />
-                        <Label x:Name="Email" />
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Spacing="10">
-                        <Label Text="Alamat" />
-                        <Label x:Name="Alamat" />
-                    </StackLayout>
-                </StackLayout>
-                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
-                <StackLayout x:Name="ContentLayout" />
-                <!--<ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SyaratsMasuk}" x:Name="SyaratMasukListView" HorizontalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
+                    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />
+                    <StackLayout x:Name="ContentLayout" VerticalOptions="FillAndExpand" />
+                    <!--<ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SyaratsMasuk}" x:Name="SyaratMasukListView" HorizontalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -48,7 +49,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
-            </StackLayout>
+                </StackLayout>
+            </ScrollView>
         </Grid>
     </custom:MasterPage.Content>
 </custom:MasterPage>

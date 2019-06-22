@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BimKon.Core.Models;
 using Xamarin.Forms;
 
@@ -23,6 +24,8 @@ namespace BimKon.Core
             Fax.Text = _sekolahInfo.Fax;
             Email.Text = _sekolahInfo.Email;
             Alamat.Text = _sekolahInfo.Address?.DisplayedAddress;
+            if (!_sekolahInfo.Nama.ToLower().Contains("sma"))
+                return;
             ContentLayout.Children.Clear();
             var stackHeaderSyaratMasuk = new StackLayout
             {
@@ -59,7 +62,6 @@ namespace BimKon.Core
                 stackContentSyaratMasuk.Children.Add(stackContentDetail);
                 number++;
             }
-            number = 1;
             var stackHeaderSyaratJurusan = new StackLayout
             {
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -71,29 +73,45 @@ namespace BimKon.Core
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
             };
-            foreach (var sy in _viewModel.SyaratsJurusan)
+            var jurusanGroups = _viewModel.SyaratsJurusan.GroupBy(x => x.Group).ToList();
+            foreach (var sy in jurusanGroups)
             {
-                var stackContentDetail = new StackLayout
+                var stackContentGroup = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
                     HorizontalOptions = LayoutOptions.StartAndExpand,
                 };
-                stackContentDetail.Children.Add(new Label()
+                stackContentGroup.Children.Add(new Label()
                 {
-                    Text = number.ToString(),
+                    Text = sy.Key.ToString(),
                     TextColor = Color.FromHex("#f35e20"),
-                    VerticalOptions = LayoutOptions.StartAndExpand
+                    HorizontalOptions = LayoutOptions.Start
 
                 });
-                stackContentDetail.Children.Add(new Label()
+                var stackContentGroupDetail = new StackLayout
                 {
-                    Text = sy.Description,
-                    TextColor = Color.FromHex("#503026"),
-                    VerticalOptions = LayoutOptions.StartAndExpand,
-                    HorizontalOptions = LayoutOptions.StartAndExpand
-                });
-                stackContentSyaratJurusan.Children.Add(stackContentDetail);
-                number++;
+                    Orientation = StackOrientation.Vertical,
+                    HorizontalOptions = LayoutOptions.StartAndExpand,
+                };
+                var items = sy.Select(x => x).ToArray();
+                number = 1;
+                foreach (var item in items)
+                {
+
+                    stackContentGroupDetail.Children.Add(new Label()
+                    {
+                        Text = $"{number}.{item.Description}",
+                        TextColor = Color.FromHex("#503026"),
+                        VerticalOptions = LayoutOptions.StartAndExpand,
+                        HorizontalOptions = LayoutOptions.StartAndExpand
+                    });
+
+                    number++;
+                }
+                stackContentSyaratJurusan.Children.Add(stackContentGroup);
+                stackContentSyaratJurusan.Children.Add(stackContentGroupDetail);
+
+
             }
 
             ContentLayout.Children.Add(stackHeaderSyaratMasuk);
