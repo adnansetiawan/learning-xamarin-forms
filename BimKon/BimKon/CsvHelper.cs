@@ -73,5 +73,37 @@ namespace BimKon.Core
             }
             return result;
         }
+
+        public List<SyaratJurusanCsv> ReadSyaratJurusan()
+        {
+            var result = new List<SyaratJurusanCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratJurusan.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<SyaratJurusanCsv>();
+                result = records.ToList();
+            }
+            return result;
+        }
+
+        public List<SyaratMasukCsv> ReadSyaratMasuk()
+        {
+            var result = new List<SyaratMasukCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratMasuk.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<SyaratMasukCsv>();
+                result = records.ToList();
+            }
+            return result;
+        }
     }
 }

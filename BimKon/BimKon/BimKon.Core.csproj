@@ -17,8 +17,8 @@
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="CsvHelper" Version="12.1.2" />
-    <PackageReference Include="Xam.Plugin.Version" Version="1.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.274416" />
+    <PackageReference Include="Xam.Plugin.Version" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -37,6 +37,8 @@
     <None Remove="BidangDanProgramKeahlian.csv" />
     <None Remove="BidangKeahlian.csv" />
     <None Remove="ProgramKeahlian.csv" />
+    <None Remove="ProgramKeahlian %28copy%29.csv" />
+    <None Remove="SyaratMasuk %28copy%29.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SekolahLanjutanOverview.csv">
@@ -45,6 +47,8 @@
     <EmbeddedResource Include="BidangDanProgramKeahlian.csv" />
     <EmbeddedResource Include="BidangKeahlian.csv" />
     <EmbeddedResource Include="ProgramKeahlian.csv" />
+    <EmbeddedResource Include="SyaratMasuk.csv" />
+    <EmbeddedResource Include="SyaratJurusan.csv" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage %28copy%29.xaml.cs">

@@ -7,11 +7,24 @@ namespace BimKon.Core
 {
     public partial class PekerjaanDetail : MasterPage
     {
+        private readonly string _type;
         public PekerjaanDetail(string title, string type)
         {
             InitializeComponent();
             Title = title;
-            if (type == "rekayasa")
+            _type = type;
+
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            LoadData();
+        }
+        private void LoadData()
+        {
+            pekerjaanLayout.Children.Clear();
+            if (_type == "rekayasa")
             {
                 int i = 1;
                 while (i < 7)
@@ -21,17 +34,17 @@ namespace BimKon.Core
 
                         Aspect = Aspect.Fill,
                         Source = $"p_rekayasa_{i}",
-                        VerticalOptions = LayoutOptions.Fill,
-                        HorizontalOptions = LayoutOptions.Fill
+                        VerticalOptions = LayoutOptions.FillAndExpand,
+                        HorizontalOptions = LayoutOptions.FillAndExpand
                     });
                     i++;
                 }
 
             }
-            else if (type == "agrobisnis")
+            else if (_type == "agrobisnis")
             {
 
-                pekerjaanGrid.Children.Add(new FFImageLoading.Forms.CachedImage
+                pekerjaanLayout.Children.Add(new FFImageLoading.Forms.CachedImage
                 {
                     Aspect = Aspect.Fill,
                     Source = $"p_agrobisnis",
@@ -42,7 +55,7 @@ namespace BimKon.Core
 
 
             }
-            else if (type == "ekonomi")
+            else if (_type == "ekonomi")
             {
 
                 pekerjaanLayout.Children.Add(new FFImageLoading.Forms.CachedImage
@@ -56,26 +69,26 @@ namespace BimKon.Core
 
 
             }
-            else if (type == "kesehatan")
+            else if (_type == "kesehatan")
             {
 
                 pekerjaanLayout.Children.Add(new FFImageLoading.Forms.CachedImage
                 {
-                    Aspect = Aspect.AspectFill,
+                    Aspect = Aspect.Fill,
                     Source = $"p_kesehatan",
                     VerticalOptions = LayoutOptions.Fill,
                     HorizontalOptions = LayoutOptions.Fill
                 });
 
             }
-            else if (type == "seni")
+            else if (_type == "seni")
             {
                 int i = 1;
                 while (i < 4)
                 {
                     pekerjaanLayout.Children.Add(new FFImageLoading.Forms.CachedImage
                     {
-                        Aspect = Aspect.AspectFill,
+                        Aspect = Aspect.Fill,
                         Source = $"p_seni_{i}",
                         VerticalOptions = LayoutOptions.Fill,
                         HorizontalOptions = LayoutOptions.Fill
@@ -85,14 +98,14 @@ namespace BimKon.Core
                 }
 
             }
-            else if (type == "it")
+            else if (_type == "it")
             {
                 int i = 1;
                 while (i < 3)
                 {
                     pekerjaanLayout.Children.Add(new FFImageLoading.Forms.CachedImage
                     {
-                        Aspect = Aspect.AspectFill,
+                        Aspect = Aspect.Fill,
                         Source = $"p_it_{i}",
                         VerticalOptions = LayoutOptions.Fill,
                         HorizontalOptions = LayoutOptions.Fill
@@ -102,13 +115,6 @@ namespace BimKon.Core
 
             }
 
-        }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            //pekerjaanImage1.Source = "p_rekayasa_1.png";
-            //pekerjaanImage2.Source = "p_rekayasa_2.png";
         }
     }
 }

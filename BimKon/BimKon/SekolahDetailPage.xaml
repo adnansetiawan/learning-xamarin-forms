@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BimKon.Core.SekolahDetailPage" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core">
+    <custom:MasterPage.BindingContext>
+        <viewModels:SekolahDetailPageViewModel />
+    </custom:MasterPage.BindingContext>
+    <custom:MasterPage.Content>
+        <Grid>
+            <ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SyaratsMasuk}" x:Name="SyaratMasukListView" HorizontalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Description}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SyaratsJurusan}" x:Name="SyaratJurusanListView" HorizontalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Description}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </custom:MasterPage.Content>
+</custom:MasterPage>

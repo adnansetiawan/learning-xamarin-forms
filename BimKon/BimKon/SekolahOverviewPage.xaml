@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core" x:Class="BimKon.Core.SekolahOverviewPage">
     <custom:MasterPage.BindingContext>
         <viewModels:SekolahOverviewPageViewModel />
@@ -12,16 +12,14 @@
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" Grid.Row="0">
                 <SearchBar HeightRequest="38" x:Name="SearchText" HorizontalOptions="FillAndExpand" Placeholder="Cari" TextChanged="SearchBar_TextChanged" VerticalOptions="Start" BackgroundColor="#33c5ed" />
             </StackLayout>
-            
             <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand">
-                <StackLayout  Orientation="Horizontal"  BackgroundColor="#33c5ed" x:Name="JenjangPendidikanGroups" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" BackgroundColor="#33c5ed" x:Name="JenjangPendidikanGroups" HorizontalOptions="CenterAndExpand">
                 </StackLayout>
-                <ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SekolahItems}" x:Name="SekolahListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None">
-                   
+                <ListView BackgroundColor="#33c5ed" ItemsSource="{Binding SekolahItems}" x:Name="SekolahListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None" ItemTapped="Handle_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout BackgroundColor="Transparent" Margin="10,6,10,6" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Spacing="0">
+                                <StackLayout BackgroundColor="Transparent" Margin="10,6,10,6" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
                                     <Frame CornerRadius="12" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15,15,15,10">
                                         <StackLayout Orientation="Vertical">
                                             <StackLayout Orientation="Horizontal" Spacing="5">
@@ -37,14 +35,13 @@
                                                 </StackLayout>
                                             </StackLayout>
                                             <!--<StackLayout Orientation="Vertical" Margin="0,15,0,0" HorizontalOptions="StartAndExpand">-->
-                                                    <Editor Text="{Binding Jurusan}" IsEnabled="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="12"  />
-                                               
+                                            <Editor Text="{Binding Jurusan}" IsEnabled="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="12" />
                                             <!--<Frame HasShadow="false" HeightRequest="30" WidthRequest="80" CornerRadius="18" Margin="0" Padding="3" BackgroundColor="{Binding CategoryColor}">
                                                 <StackLayout Orientation="Vertical" Spacing="0">
                                                     <Label Text="Detail" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" TextColor="White" MinimumWidthRequest="70" HorizontalOptions="Center" />
                                                  </StackLayout>
                                             </Frame>-->
-                                        <!--</StackLayout>-->
+                                            <!--</StackLayout>-->
                                         </StackLayout>
                                     </Frame>
                                 </StackLayout>

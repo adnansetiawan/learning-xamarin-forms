@@ -31,13 +31,13 @@ namespace BimKon.Core
             _viewModel.Navigation = Navigation;
         }
 
-        /*async void Handle_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        async void Handle_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            var item = ((ListView)sender).SelectedItem as JurusanViewModel;
+            var item = ((ListView)sender).SelectedItem as SekolahDetailViewModel;
             if (item == null)
                 return;
-            await Navigation.PushAsync(new PekerjaanPage(item), true);
-        }*/
+            await Navigation.PushAsync(new SekolahDetailPage(item), true);
+        }
 
         private void RefreshListViewData(string filterBy = null)
         {

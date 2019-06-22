@@ -54,4 +54,20 @@ namespace BimKon.Core.Models
 
 
     }
+    public class SyaratMasukCsv
+    {
+        [Name("kode")]
+        public string Kode { get; set; }
+        [Name("description")]
+        public string Description { get; set; }
+
+    }
+    public class SyaratJurusanCsv
+    {
+        [Name("Jurusan")]
+        public string Jurusan { get; set; }
+        [Name("description")]
+        public string Description { get; set; }
+
+    }
 }
