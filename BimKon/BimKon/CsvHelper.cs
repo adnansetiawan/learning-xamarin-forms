@@ -66,6 +66,7 @@ namespace BimKon.Core
             using (var reader = new StreamReader(stream))
             using (var csv = new CsvReader(reader))
             {
+                csv.Configuration.MissingFieldFound = null;
                 csv.Configuration.Delimiter = "|";
                 csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var records = csv.GetRecords<SekolahDetailCsv>();

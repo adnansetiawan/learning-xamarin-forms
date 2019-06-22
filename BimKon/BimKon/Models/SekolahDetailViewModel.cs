@@ -35,6 +35,9 @@ namespace BimKon.Core.Models
         public string StatusSekolah { get; set; }
         public string WaktuPenyelenggaraan { get; set; }
         public string Jurusan { get; set; }
+        public string Email { get; set; }
+        public string Fax { get; set; }
+        public string Telpon { get; set; }
         public AddressViewModel Address { get; set; }
         public Color CategoryColor
         {

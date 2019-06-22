@@ -51,6 +51,12 @@ namespace BimKon.Core.Models
         public string Kabupaten { get; set; }
         [Name("jurusan")]
         public string Jurusan { get; set; }
+        [Name("telpon")]
+        public string Telpon { get; set; }
+        [Name("fax")]
+        public string Fax { get; set; }
+        [Name("email")]
+        public string Email { get; set; }
 
 
     }

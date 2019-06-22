@@ -57,6 +57,9 @@ namespace BimKon.Core.Repositories
                 StatusSekolah = x.StatusSekolah,
                 WaktuPenyelenggaraan = x.WaktuPenyelenggaraan,
                 Jurusan = x.Jurusan,
+                Email = x.Email,
+                Fax = x.Fax,
+                Telpon = x.Telpon,
                 Address = new AddressViewModel
                 {
                     Alamat = x.Alamat,
