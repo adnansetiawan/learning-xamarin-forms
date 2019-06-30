@@ -39,6 +39,7 @@
     <None Remove="ProgramKeahlian.csv" />
     <None Remove="ProgramKeahlian %28copy%29.csv" />
     <None Remove="SyaratMasuk %28copy%29.csv" />
+    <None Remove="PeminatanPelajaran.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SekolahLanjutanOverview.csv">
@@ -49,6 +50,7 @@
     <EmbeddedResource Include="ProgramKeahlian.csv" />
     <EmbeddedResource Include="SyaratMasuk.csv" />
     <EmbeddedResource Include="SyaratJurusan.csv" />
+    <EmbeddedResource Include="PeminatanPelajaran.csv" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage %28copy%29.xaml.cs">

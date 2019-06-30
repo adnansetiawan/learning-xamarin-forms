@@ -76,4 +76,12 @@ namespace BimKon.Core.Models
         public string Description { get; set; }
 
     }
+    public class JurusanMataPelajaranCsv
+    {
+        [Name("Jurusan")]
+        public string Jurusan { get; set; }
+        [Name("MataPelajaran")]
+        public string MataPelajaran { get; set; }
+
+    }
 }

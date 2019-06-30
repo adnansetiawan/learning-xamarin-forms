@@ -9,19 +9,19 @@
                 <StackLayout>
                     <StackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Telp   :" />
+                            <Label Text="Telp" />
                             <Label x:Name="Telp" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Fax    :" />
+                            <Label Text="Fax" />
                             <Label x:Name="Fax" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Email  :" />
+                            <Label Text="Email" />
                             <Label x:Name="Email" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Alamat :" />
+                            <Label Text="Alamat" />
                             <Label x:Name="Alamat" />
                         </StackLayout>
                     </StackLayout>

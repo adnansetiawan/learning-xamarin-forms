@@ -26,6 +26,26 @@ namespace BimKon.Core
             return result;
         }
 
+        public List<JurusanMataPelajaranCsv> ReadJurusanMataPelajaran(string jenjangPendidikan)
+        {
+            var result = new List<JurusanMataPelajaranCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.PeminatanPelajaran.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<JurusanMataPelajaranCsv>();
+                result = records.ToList();
+            }
+            if (jenjangPendidikan == "SMA")
+            {
+                result = result.Where(x => x.Jurusan != "AGAMA").ToList();
+            }
+            return result;
+        }
+
         public List<BidangDanProgramKeahlianCsv> ReadKeahliandDanProgram()
         {
             var result = new List<BidangDanProgramKeahlianCsv>();
@@ -91,7 +111,7 @@ namespace BimKon.Core
             return result;
         }
 
-        public List<SyaratMasukCsv> ReadSyaratMasuk()
+        public List<SyaratMasukCsv> ReadSyaratMasuk(string jenjangPendidikan)
         {
             var result = new List<SyaratMasukCsv>();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
@@ -103,6 +123,10 @@ namespace BimKon.Core
                 csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var records = csv.GetRecords<SyaratMasukCsv>();
                 result = records.ToList();
+            }
+            if (jenjangPendidikan == "SMA")
+            {
+                result = result.Where(x => x.Kode != "AGAMA").ToList();
             }
             return result;
         }

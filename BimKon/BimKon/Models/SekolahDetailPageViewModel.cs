@@ -15,6 +15,7 @@ namespace BimKon.Core.Models
         {
             SyaratsMasuk = new ObservableCollection<SyaratViewModel>();
             SyaratsJurusan = new ObservableCollection<SyaratViewModel>();
+            MataPelajarans = new ObservableCollection<MataPelajaranViewModel>();
         }
         private ICommand _init;
         public ICommand Init
@@ -22,10 +23,10 @@ namespace BimKon.Core.Models
             get
             {
 
-                _init = _init ?? new Command(() =>
+                _init = _init ?? new Command<SekolahDetailViewModel>((s) =>
                 {
 
-                    var syaratMasuk = helper.ReadSyaratMasuk();
+                    var syaratMasuk = helper.ReadSyaratMasuk(s.JenjangPendidikan);
                     SyaratsMasuk = new ObservableCollection<SyaratViewModel>(syaratMasuk.Select(x => new SyaratViewModel
                     {
                         Group = x.Kode,
@@ -37,6 +38,13 @@ namespace BimKon.Core.Models
                         Group = x.Jurusan,
                         Description = x.Description
                     }));
+                    var mataPelajarans = helper.ReadJurusanMataPelajaran(s.JenjangPendidikan);
+                    MataPelajarans = new ObservableCollection<MataPelajaranViewModel>(mataPelajarans.Select(x => new MataPelajaranViewModel
+                    {
+                        Jurusan = x.Jurusan,
+                        MataPelajaran = x.MataPelajaran
+                    }));
+
                 });
                 return _init;
             }
@@ -52,6 +60,12 @@ namespace BimKon.Core.Models
         {
             get => _syaratsJurusan;
             set => SetProperty(ref _syaratsJurusan, value, nameof(SyaratsJurusan));
+        }
+        private ObservableCollection<MataPelajaranViewModel> _mataPelajarans;
+        public ObservableCollection<MataPelajaranViewModel> MataPelajarans
+        {
+            get => _mataPelajarans;
+            set => SetProperty(ref _mataPelajarans, value, nameof(MataPelajarans));
         }
 
 
