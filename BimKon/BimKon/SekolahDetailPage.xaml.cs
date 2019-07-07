@@ -41,6 +41,7 @@ namespace BimKon.Core
             int number = 1;
             var syaratMasukMain = _viewModel.SyaratsMasuk.Where(x => !x.Group.Contains("."));
             var syaratMasukChilds = _viewModel.SyaratsMasuk.Where(x => x.Group.Contains("."));
+
             foreach (var sy in syaratMasukMain)
             {
                 var stackContentDetail = new StackLayout
@@ -62,6 +63,8 @@ namespace BimKon.Core
                     VerticalOptions = LayoutOptions.StartAndExpand,
                     HorizontalOptions = LayoutOptions.StartAndExpand
                 });
+                stackContentSyaratMasuk.Children.Add(stackContentDetail);
+
                 if (syaratMasukChilds.Any(x => x.Group.Contains(sy.Group.ToString())))
                 {
                     var childs = syaratMasukChilds.Where(x => x.Group.Contains(sy.Group.ToString()));
@@ -69,7 +72,7 @@ namespace BimKon.Core
                     {
                         var stackContentChildDetail = new StackLayout
                         {
-                            Orientation = StackOrientation.Vertical,
+                            Orientation = StackOrientation.Horizontal,
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                         };
                         stackContentChildDetail.Children.Add(new Label()
@@ -86,12 +89,11 @@ namespace BimKon.Core
                             VerticalOptions = LayoutOptions.StartAndExpand,
                             HorizontalOptions = LayoutOptions.StartAndExpand
                         });
-                        stackContentDetail.Children.Add(stackContentChildDetail);
+                        stackContentSyaratMasuk.Children.Add(stackContentChildDetail);
 
                     }
 
                 }
-                stackContentSyaratMasuk.Children.Add(stackContentDetail);
 
                 number++;
             }
