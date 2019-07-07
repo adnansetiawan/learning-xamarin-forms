@@ -11,7 +11,7 @@ namespace BimKon.Core
         List<ProgramKeahlianCsv> ReadProgramKeahlian();
         List<BidangDanProgramKeahlianCsv> ReadKeahliandDanProgram();
         List<SyaratMasukCsv> ReadSyaratMasuk(string jenjangPendidikan);
-        List<SyaratJurusanCsv> ReadSyaratJurusan();
+        List<SyaratJurusanCsv> ReadSyaratJurusan(string jenjangPendidikan);
         List<JurusanMataPelajaranCsv> ReadJurusanMataPelajaran(string jenjangPendidikan);
     }
 }

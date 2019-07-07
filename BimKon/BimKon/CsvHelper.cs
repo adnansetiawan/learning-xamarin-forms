@@ -37,12 +37,11 @@ namespace BimKon.Core
                 csv.Configuration.Delimiter = "|";
                 csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var records = csv.GetRecords<JurusanMataPelajaranCsv>();
+                records = records.Where(x => x.JenjangPendidikan.Contains(jenjangPendidikan));
                 result = records.ToList();
             }
-            if (jenjangPendidikan == "SMA")
-            {
-                result = result.Where(x => x.Jurusan != "AGAMA").ToList();
-            }
+
+
             return result;
         }
 
@@ -95,17 +94,32 @@ namespace BimKon.Core
             return result;
         }
 
-        public List<SyaratJurusanCsv> ReadSyaratJurusan()
+        public List<SyaratJurusanCsv> ReadSyaratJurusan(string jenjangPendidikan)
         {
             var result = new List<SyaratJurusanCsv>();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratJurusan.csv");
+            var stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratJurusan.csv");
+
             using (var reader = new StreamReader(stream))
             using (var csv = new CsvReader(reader))
             {
                 csv.Configuration.Delimiter = "|";
                 csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var records = csv.GetRecords<SyaratJurusanCsv>();
+                if (jenjangPendidikan == "SMK")
+                {
+                    records = records.Where(x => x.Jurusan == "KEJURUAN").ToList();
+                }
+                else if (jenjangPendidikan == "SMA")
+                {
+                    records = records.Where(x => x.Jurusan != "AGAMA" && x.Jurusan != "KEJURUAN").ToList();
+
+                }
+                else
+                {
+                    records = records.Where(x => x.Jurusan != "KEJURUAN").ToList();
+
+                }
                 result = records.ToList();
             }
             return result;
@@ -115,7 +129,16 @@ namespace BimKon.Core
         {
             var result = new List<SyaratMasukCsv>();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
-            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratMasuk.csv");
+            Stream stream = null;
+            if (jenjangPendidikan == "SMK")
+            {
+                stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratMasukSMK.csv");
+            }
+            else
+            {
+                stream = assembly.GetManifestResourceStream("BimKon.Core.SyaratMasuk.csv");
+
+            }
             using (var reader = new StreamReader(stream))
             using (var csv = new CsvReader(reader))
             {
@@ -124,10 +147,7 @@ namespace BimKon.Core
                 var records = csv.GetRecords<SyaratMasukCsv>();
                 result = records.ToList();
             }
-            if (jenjangPendidikan == "SMA")
-            {
-                result = result.Where(x => x.Kode != "AGAMA").ToList();
-            }
+
             return result;
         }
     }

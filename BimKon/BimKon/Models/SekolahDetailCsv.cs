@@ -70,6 +70,8 @@ namespace BimKon.Core.Models
     }
     public class SyaratJurusanCsv
     {
+        [Name("ShowTitle")]
+        public bool ShowTitle { get; set; }
         [Name("Jurusan")]
         public string Jurusan { get; set; }
         [Name("description")]
@@ -78,6 +80,8 @@ namespace BimKon.Core.Models
     }
     public class JurusanMataPelajaranCsv
     {
+        [Name("JenjangPendidikan")]
+        public string JenjangPendidikan { get; set; }
         [Name("Jurusan")]
         public string Jurusan { get; set; }
         [Name("MataPelajaran")]

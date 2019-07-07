@@ -8,21 +8,21 @@
             <ScrollView>
                 <StackLayout>
                     <StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Telp" />
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Telp" FontSize="12" />
                             <Label x:Name="Telp" />
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Fax" />
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Fax" FontSize="12" />
                             <Label x:Name="Fax" />
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Email" />
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Email" FontSize="12" />
                             <Label x:Name="Email" />
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="Alamat" />
-                            <Label x:Name="Alamat" />
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Label Text="Alamat" FontSize="12" />
+                            <Label x:Name="Alamat" FontSize="10" />
                         </StackLayout>
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="1" Opacity="0.2" Color="Gray" />

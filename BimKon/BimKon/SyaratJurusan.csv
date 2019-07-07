@@ -1,12 +1,15 @@
-﻿JURUSAN|DESCRIPTION
-IBB|Mendapatkan nilai minimal baik pada mata pelajaran Bahasa Indonensia dan Bahasa Inggris (dibuktikan dengan Rapor).
-IBB|Surat rekomendasi dari guru BK bahwa yang bersangkutan layak memasuki jurusan IBB.
-IBB|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
-MIPA|Mendapatkan nilai minimal baik pada mata pelajaran matematika, dan IPA (dibutkikan dengan Rapor).
-MIPA|Surat rekomendasi dari guru BK bahwa yang bersangkutan layak memasuki jurusan MIPA.
-MIPA|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
-IPS|Mendapatkan nilai minimal baik pada mata pelajaran IPS, dan PKn(dibuktikan dengan Rapor).
-IPS|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
-AGAMA|Mendapatkan nilai minimal baik pada mata pelajaran IPendidikan Agama dan PKn (dibutkikan dengan Rapor).
-AGAMA|Surat rekomendasi dari guru BK bahwa yang bersangkutan layak memasuki jurusan IPS.
-AGAMA|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs)
+﻿SHOWTITLE|JURUSAN|DESCRIPTION
+TRUE|IBB|Mendapatkan nilai minimal baik pada mata pelajaran Bahasa Indonensia dan Bahasa Inggris (dibuktikan dengan Rapor).
+TRUE|IBB|Surat rekomendasi dari guru BK bahwa yang bersangkutan layak memasuki jurusan IBB.
+TRUE|IBB|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
+TRUE|MIPA|Mendapatkan nilai minimal baik pada mata pelajaran matematika, dan IPA (dibutkikan dengan Rapor).
+TRUE|MIPA|Surat rekomendasi dari guru BK bahwa yang bersangkutan layak memasuki jurusan MIPA.
+TRUE|MIPA|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
+TRUE|IPS|Mendapatkan nilai minimal baik pada mata pelajaran IPS, dan PKn(dibuktikan dengan Rapor).
+TRUE|IPS|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
+TRUE|AGAMA|Mendapatkan nilai minimal baik pada mata pelajaran IPendidikan Agama dan PKn (dibutkikan dengan Rapor).
+TRUE|AGAMA|Surat rekomendasi dari guru BK bahwa yang bersangkutan layak memasuki jurusan IPS.
+TRUE|AGAMA|Surat keterangan kelakuan baik dari sekolah asal (SMP/MTs).
+FALSE|KEJURUAN|Memiliki bakat minat sesuai dengan pilihan jurusan.
+FALSE|KEJURUAN|Nilai kategori baik pada mata pelajaran yang sesuai dengan pilihan jurusan.
+FALSE|KEJURUAN|Memiliki surat rekomendasi peminatan dari guru BK.

@@ -32,11 +32,13 @@ namespace BimKon.Core.Models
                         Group = x.Kode,
                         Description = x.Description
                     }));
-                    var syaratJurusan = helper.ReadSyaratJurusan();
+                    var syaratJurusan = helper.ReadSyaratJurusan(s.JenjangPendidikan);
                     SyaratsJurusan = new ObservableCollection<SyaratViewModel>(syaratJurusan.Select(x => new SyaratViewModel
                     {
                         Group = x.Jurusan,
-                        Description = x.Description
+                        Description = x.Description,
+                        ShowTitle = x.ShowTitle
+
                     }));
                     var mataPelajarans = helper.ReadJurusanMataPelajaran(s.JenjangPendidikan);
                     MataPelajarans = new ObservableCollection<MataPelajaranViewModel>(mataPelajarans.Select(x => new MataPelajaranViewModel

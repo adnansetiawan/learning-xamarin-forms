@@ -5,6 +5,7 @@ namespace BimKon.Core.Models
     {
         public string Group { get; set; }
         public string Description { get; set; }
+        public bool ShowTitle { get; set; }
     }
     public class MataPelajaranViewModel
     {
