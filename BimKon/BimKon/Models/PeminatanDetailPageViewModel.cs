@@ -27,7 +27,7 @@ namespace BimKon.Core.Models
                     var csvProgram = App.Programs;
                     var csvKeahlianDanProgram = App.BidangDanProgramKeahlianCsv;
                     var csvPaketKeahlian = App.PaketKeahlian;
-                    var programs = csvKeahlianDanProgram.Where(x => x.Bidang == s.Nama).ToList();
+                    var programs = csvKeahlianDanProgram.Where(x => x.Bidang == s.Kode).ToList();
                     var programKodes = programs.SelectMany(x => x.Program.Split(',').ToArray()).ToArray();
                     if (programKodes.Length > 0)
                     {

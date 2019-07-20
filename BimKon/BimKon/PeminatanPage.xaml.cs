@@ -33,7 +33,9 @@ namespace BimKon.Core
             var item = ((ListView)sender).SelectedItem as KeahlianViewModel;
             if (item == null)
                 return;
+            KeahlianListView.SelectedItem = null;
             await Navigation.PushAsync(new PeminatanDetailPage(item), true);
+
         }
         private KeahlianPageViewModel _viewModel;
 

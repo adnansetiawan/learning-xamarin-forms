@@ -6,7 +6,7 @@
     <custom:MasterPage.Content>
         <Grid Padding="20">
             <ScrollView>
-                <StackLayout>
+                <StackLayout x:Name="ContentLayout" HorizontalOptions="FillAndExpand">
                 </StackLayout>
             </ScrollView>
         </Grid>
