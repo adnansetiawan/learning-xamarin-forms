@@ -44,6 +44,23 @@ namespace BimKon.Core
 
             return result;
         }
+        public List<JurusanMataPelajaranSMKMappingCsv> ReadJurusanMataPelajaranMappingSMK()
+        {
+            var result = new List<JurusanMataPelajaranSMKMappingCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.PeminatanPelajaranSMKMapping.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<JurusanMataPelajaranSMKMappingCsv>();
+                result = records.ToList();
+            }
+
+
+            return result;
+        }
 
         public List<BidangDanProgramKeahlianCsv> ReadKeahliandDanProgram()
         {
@@ -72,6 +89,21 @@ namespace BimKon.Core
                 csv.Configuration.Delimiter = "|";
                 csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var records = csv.GetRecords<ProgramKeahlianCsv>();
+                result = records.ToList();
+            }
+            return result;
+        }
+        public List<PaketKeahlianCsv> ReadPaketKeahlian()
+        {
+            var result = new List<PaketKeahlianCsv>();
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(CsvHelper)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("BimKon.Core.PaketKeahlian.csv");
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Configuration.Delimiter = "|";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
+                var records = csv.GetRecords<PaketKeahlianCsv>();
                 result = records.ToList();
             }
             return result;

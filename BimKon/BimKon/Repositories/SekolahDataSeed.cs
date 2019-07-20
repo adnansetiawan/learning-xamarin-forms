@@ -14,14 +14,15 @@ namespace BimKon.Core.Repositories
             var csvKeahlian = helper.ReadBidangKeahlian();
             if (csvKeahlian.Count == 0)
                 return new List<KeahlianViewModel>();
-            var csvProgram = helper.ReadProgramKeahlian();
-            var csvKeahlianDanProgram = helper.ReadKeahliandDanProgram();
+            //var csvProgram = helper.ReadProgramKeahlian();
+            //var csvKeahlianDanProgram = helper.ReadKeahliandDanProgram();
             var result = new List<KeahlianViewModel>();
             foreach (var keahlian in csvKeahlian)
             {
                 var keahlianViewModel = new KeahlianViewModel();
                 keahlianViewModel.Nama = keahlian.Nama;
-                var programs = csvKeahlianDanProgram.Where(x => x.Bidang == keahlian.Kode).ToList();
+                keahlianViewModel.Kode = keahlian.Kode;
+                /*var programs = csvKeahlianDanProgram.Where(x => x.Bidang == keahlian.Kode).ToList();
                 var programKodes = programs.SelectMany(x => x.Program.Split(',').ToArray()).ToArray();
                 if (programKodes.Length > 0)
                 {
@@ -33,10 +34,40 @@ namespace BimKon.Core.Repositories
                             Nama = x.Nama
                         }).ToList();
                     }
-                }
+                }*/
                 result.Add(keahlianViewModel);
             }
             return result;
+
+        }
+    }
+    public class ProgramDataSeed
+    {
+        static ICsvHelper helper = DependencyService.Get<ICsvHelper>();
+        public static List<ProgramKeahlianCsv> GetAll()
+        {
+            return helper.ReadProgramKeahlian();
+
+
+        }
+    }
+    public class PaketKeahlianDataSeed
+    {
+        static ICsvHelper helper = DependencyService.Get<ICsvHelper>();
+        public static List<PaketKeahlianCsv> GetAll()
+        {
+            return helper.ReadPaketKeahlian();
+
+
+        }
+    }
+    public class KeahlianDanProgramDataSeed
+    {
+        static ICsvHelper helper = DependencyService.Get<ICsvHelper>();
+        public static List<BidangDanProgramKeahlianCsv> GetAll()
+        {
+            return helper.ReadKeahliandDanProgram();
+
 
         }
     }

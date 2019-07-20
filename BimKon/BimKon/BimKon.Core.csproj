@@ -40,6 +40,9 @@
     <None Remove="ProgramKeahlian %28copy%29.csv" />
     <None Remove="SyaratMasuk %28copy%29.csv" />
     <None Remove="PeminatanPelajaran.csv" />
+    <None Remove="PeminatanPelajaran %28copy%29.csv" />
+    <None Remove="PeminatanPelajaranSMKMapping.csv" />
+    <None Remove="DasarBidangKeahlian.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SekolahLanjutanOverview.csv">
@@ -52,6 +55,8 @@
     <EmbeddedResource Include="SyaratJurusan.csv" />
     <EmbeddedResource Include="PeminatanPelajaran.csv" />
     <EmbeddedResource Include="SyaratMasukSMK.csv" />
+    <EmbeddedResource Include="PeminatanPelajaranSMKMapping.csv" />
+    <EmbeddedResource Include="PaketKeahlian.csv" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage %28copy%29.xaml.cs">

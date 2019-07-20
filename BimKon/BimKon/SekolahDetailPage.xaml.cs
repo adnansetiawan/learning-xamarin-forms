@@ -73,12 +73,13 @@ namespace BimKon.Core
                         var stackContentChildDetail = new StackLayout
                         {
                             Orientation = StackOrientation.Horizontal,
+                            Padding = new Thickness(12, 0, 0, 0),
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                         };
                         stackContentChildDetail.Children.Add(new Label()
                         {
-                            Text = child.Group.Split('.')[1].ToString(),
-                            TextColor = Color.FromHex("#f35e20"),
+                            Text = $"{child.Group.Split('.')[1].Trim()}.",
+                            TextColor = Color.FromHex("#503026"),
                             VerticalOptions = LayoutOptions.StartAndExpand
 
                         });
@@ -103,7 +104,14 @@ namespace BimKon.Core
                 BackgroundColor = Color.FromHex("#33c5ed"),
                 HeightRequest = 30
             };
-            stackHeaderSyaratJurusan.Children.Add(new Label { HorizontalOptions = LayoutOptions.CenterAndExpand, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center, Text = $"Persyaratan Memilih Jurusan", TextColor = Color.White });
+            stackHeaderSyaratJurusan.Children.Add(new Label
+            {
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center,
+                Text = $"Persyaratan Memilih Jurusan",
+                TextColor = Color.White
+            });
 
             var stackContentSyaratJurusan = new StackLayout
             {

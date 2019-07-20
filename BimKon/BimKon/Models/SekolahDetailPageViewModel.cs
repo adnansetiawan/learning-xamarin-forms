@@ -23,9 +23,40 @@ namespace BimKon.Core.Models
             get
             {
 
-                _init = _init ?? new Command<SekolahDetailViewModel>((s) =>
+                _init = _init ?? new Command<SekolahDetailViewModel>(async (s) =>
                 {
+                    var mataPelajarans = helper.ReadJurusanMataPelajaran(s.JenjangPendidikan);
 
+                    if (s.JenjangPendidikan == "SMK")
+                    {
+                        var mappingSMK = helper.ReadJurusanMataPelajaranMappingSMK();
+                        if (mappingSMK == null || mappingSMK.Count == 0)
+                        {
+                            return;
+                        }
+                        var smk = mappingSMK.FirstOrDefault(x => x.NamaSekolah == s.Nama);
+                        if (smk == null)
+                        {
+                            return;
+                        }
+                        var availableJurusanKode = smk.Kode.Split(',').ToArray();
+                        if (availableJurusanKode == null || availableJurusanKode.Length == 0)
+                            return;
+                        var availableJurusans = mataPelajarans.Where(x => availableJurusanKode.Contains(x.Kode));
+                        MataPelajarans = new ObservableCollection<MataPelajaranViewModel>(availableJurusans.Select(x => new MataPelajaranViewModel
+                        {
+                            Jurusan = x.Jurusan,
+                            MataPelajaran = x.MataPelajaran
+                        }));
+                    }
+                    else
+                    {
+                        MataPelajarans = new ObservableCollection<MataPelajaranViewModel>(mataPelajarans.Select(x => new MataPelajaranViewModel
+                        {
+                            Jurusan = x.Jurusan,
+                            MataPelajaran = x.MataPelajaran
+                        }));
+                    }
                     var syaratMasuk = helper.ReadSyaratMasuk(s.JenjangPendidikan);
                     SyaratsMasuk = new ObservableCollection<SyaratViewModel>(syaratMasuk.Select(x => new SyaratViewModel
                     {
@@ -40,12 +71,7 @@ namespace BimKon.Core.Models
                         ShowTitle = x.ShowTitle
 
                     }));
-                    var mataPelajarans = helper.ReadJurusanMataPelajaran(s.JenjangPendidikan);
-                    MataPelajarans = new ObservableCollection<MataPelajaranViewModel>(mataPelajarans.Select(x => new MataPelajaranViewModel
-                    {
-                        Jurusan = x.Jurusan,
-                        MataPelajaran = x.MataPelajaran
-                    }));
+
 
                 });
                 return _init;
@@ -69,6 +95,7 @@ namespace BimKon.Core.Models
             get => _mataPelajarans;
             set => SetProperty(ref _mataPelajarans, value, nameof(MataPelajarans));
         }
+
 
 
     }

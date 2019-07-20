@@ -19,6 +19,18 @@ namespace BimKon.Core.Models
         public string Nama { get; set; }
 
     }
+    public class PaketKeahlianCsv
+    {
+        [Name("kodeprogram")]
+        public string KodeProgram { get; set; }
+        [Name("kode")]
+        public string Kode { get; set; }
+        [Name("nama")]
+        public string Nama { get; set; }
+        [Name("sekolah")]
+        public string Sekolah { get; set; }
+
+    }
     public class ProgramKeahlianCsv
     {
         [Name("kode")]
@@ -80,12 +92,22 @@ namespace BimKon.Core.Models
     }
     public class JurusanMataPelajaranCsv
     {
+        [Name("Kode")]
+        public string Kode { get; set; }
         [Name("JenjangPendidikan")]
         public string JenjangPendidikan { get; set; }
         [Name("Jurusan")]
         public string Jurusan { get; set; }
         [Name("MataPelajaran")]
         public string MataPelajaran { get; set; }
+
+    }
+    public class JurusanMataPelajaranSMKMappingCsv
+    {
+        [Name("Kode")]
+        public string Kode { get; set; }
+        [Name("NamaSekolah")]
+        public string NamaSekolah { get; set; }
 
     }
 }

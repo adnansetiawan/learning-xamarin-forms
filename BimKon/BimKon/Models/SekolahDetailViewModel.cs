@@ -7,7 +7,18 @@ namespace BimKon.Core.Models
 {
     public class ProgramViewModel
     {
+        public ProgramViewModel()
+        {
+            PaketKeahlians = new List<PaketKeahlianViewModel>();
+        }
         public string Nama { get; set; }
+        public List<PaketKeahlianViewModel> PaketKeahlians { get; set; }
+
+    }
+    public class PaketKeahlianViewModel
+    {
+        public string Nama { get; set; }
+        public string Sekolah { get; set; }
     }
     public class KeahlianViewModel
     {
@@ -15,6 +26,7 @@ namespace BimKon.Core.Models
         {
             Programs = new List<ProgramViewModel>();
         }
+        public string Kode { get; set; }
         public string Nama { get; set; }
         public List<ProgramViewModel> Programs { get; set; }
         public string ProgramAsString

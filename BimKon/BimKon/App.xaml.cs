@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using BimKon.Core.Models;
 using BimKon.Core.PageExtensions;
@@ -81,6 +82,42 @@ namespace BimKon.Core
                     _keahlians = new ObservableCollection<KeahlianViewModel>(Repositories.KeahlianDataSeed.GetAll());
                 }
                 return _keahlians;
+            }
+        }
+        static List<ProgramKeahlianCsv> _programs;
+        public static List<ProgramKeahlianCsv> Programs
+        {
+            get
+            {
+                if (_programs == null)
+                {
+                    _programs = Repositories.ProgramDataSeed.GetAll();
+                }
+                return _programs;
+            }
+        }
+        static List<PaketKeahlianCsv> _paketKeahlian;
+        public static List<PaketKeahlianCsv> PaketKeahlian
+        {
+            get
+            {
+                if (_paketKeahlian == null)
+                {
+                    _paketKeahlian = Repositories.PaketKeahlianDataSeed.GetAll();
+                }
+                return _paketKeahlian;
+            }
+        }
+        static List<BidangDanProgramKeahlianCsv> _bidangDanProgramKeahlianCsv;
+        public static List<BidangDanProgramKeahlianCsv> BidangDanProgramKeahlianCsv
+        {
+            get
+            {
+                if (_bidangDanProgramKeahlianCsv == null)
+                {
+                    _bidangDanProgramKeahlianCsv = Repositories.KeahlianDanProgramDataSeed.GetAll();
+                }
+                return _bidangDanProgramKeahlianCsv;
             }
         }
     }

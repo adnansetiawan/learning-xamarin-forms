@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<custom:MasterPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BimKon.Core.PeminatanDetailPage" xmlns:viewModels="clr-namespace:BimKon.Core.Models" xmlns:custom="clr-namespace:BimKon.Core">
+    <custom:MasterPage.BindingContext>
+        <viewModels:PeminatanDetailPageViewModel />
+    </custom:MasterPage.BindingContext>
+    <custom:MasterPage.Content>
+        <Grid Padding="20">
+            <ScrollView>
+                <StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </custom:MasterPage.Content>
+</custom:MasterPage>

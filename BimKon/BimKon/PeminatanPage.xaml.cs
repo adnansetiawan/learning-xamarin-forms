@@ -28,6 +28,13 @@ namespace BimKon.Core
 
 
         }
+        async void Handle_ItemSelected(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            var item = ((ListView)sender).SelectedItem as KeahlianViewModel;
+            if (item == null)
+                return;
+            await Navigation.PushAsync(new PeminatanDetailPage(item), true);
+        }
         private KeahlianPageViewModel _viewModel;
 
         protected override void OnBindingContextChanged()
@@ -41,5 +48,7 @@ namespace BimKon.Core
             _viewModel = vm;
             _viewModel.Navigation = Navigation;
         }
+
+
     }
 }

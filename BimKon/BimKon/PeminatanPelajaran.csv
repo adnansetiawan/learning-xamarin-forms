@@ -1,54 +1,63 @@
-﻿JENJANGPENDIDIKAN|JURUSAN|MATAPELAJARAN
-SMA,MA|IBB|Bahasa dan Sastra Indonesia 
-SMA,MA|IBB|Bahasa dan Sastra Inggris
-SMA,MA|IBB|Bahasa dan Sastra Arab
-SMA,MA|IBB|Antropologi
-SMA,MA|MIPA|Matematika
-SMA,MA|MIPA|Fisika
-SMA,MA|MIPA|Biologi
-SMA,MA|MIPA|Kimia
-SMA,MA|IPS|Geografi
-SMA,MA|IPS|Sosiologi
-SMA,MA|IPS|Sejarah
-SMA,MA|IPS|Ekonomi
-MA|AGAMA|Al-Quran Hadis
-MA|AGAMA|Tafsir
-MA|AGAMA|Akidah Akhlak
-MA|AGAMA|Fikih
-MA|AGAMA|Akhlak
-MA|AGAMA|Bahasa Arab
-SMK|OTOMOTIF|Teknologi Dasar Otomotif
-SMK|OTOMOTIF|Pekerjaan Dasar Teknik Otomotif
-SMK|OTOMOTIF|Teknik Listrik Dasar Otomotif
-SMK|MULTIMEDIA|Perakitan Komputer dan Sistem operasi
-SMK|MULTIMEDIA|Pemprograman dasar
-SMK|MULTIMEDIA|Dasar desain grafis
-SMK|AKUNTANSI|Simulasi digital
-SMK|AKUNTANSI|Etika profesi
-SMK|AKUNTANSI|Dasar-dasar perbankan
-SMK|AKUNTANSI|Paket program pengolah angka
-SMK|TEKNIK PENDIDNGIN|Gambar teknik listrik
-SMK|TEKNIK PENDIDNGIN|Dasar listrik dan elektronika
-SMK|TEKNIK PENDIDNGIN|Pekerjaan dasar elektromekanik
-SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Penanganan Bahan Hasil Pertanian
-SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Dasar Proses Pengolahan Pertanian
-SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Dasar Pengendalian Mutu Hasil Pertanian
-SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Keamanan Pangan
-SMK|TEKNIK KENDARAAN RINGAN|Teknologi Mekanik
-SMK|TEKNIK KENDARAAN RINGAN|Kelistrikan Mesin dan Konversi Energi
-SMK|TEKNIK KENDARAAN RINGAN|Mekanika Teknik
-SMK|INSTALASI TENAGA LISTRIK|Kerja Bengkel Elektromekanik
-SMK|INSTALASI TENAGA LISTRIK|Dasar-dasar Kelistrikan
-SMK|PENDINGIN DAN TATA UDARA|Gambar teknik listrik
-SMK|PENDINGIN DAN TATA UDARA|Dasar listrik dan elektronika
-SMK|PENDINGIN DAN TATA UDARA|Pekerjaan Dasar elektronika
-SMK|TEKNIK GAMBAR BANGUNAN|Mekanika Teknik
-SMK|TEKNIK GAMBAR BANGUNAN|Ilmu Bangunan
-SMK|TEKNIK GAMBAR BANGUNAN|Rencana Anggaran Biaya (RAB)
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Dasar-dasar Budidaya Tanaman
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Alat Mesin Pertanian
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Tanah dan Pupuk
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Perlindungan Tanaman
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Perlindungan Tanaman Tumbuh
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Panen dan Pasca Panen
-SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Penyuluhan Pertanian
+﻿KODE|JENJANGPENDIDIKAN|JURUSAN|MATAPELAJARAN
+1|SMA,MA|IBB|Bahasa dan Sastra Indonesia 
+2|SMA,MA|IBB|Bahasa dan Sastra Inggris
+3|SMA,MA|IBB|Bahasa dan Sastra Arab
+4|SMA,MA|IBB|Antropologi
+5|SMA,MA|MIPA|Matematika
+6|SMA,MA|MIPA|Fisika
+7|SMA,MA|MIPA|Biologi
+8|SMA,MA|MIPA|Kimia
+9|SMA,MA|IPS|Geografi
+10|SMA,MA|IPS|Sosiologi
+11|SMA,MA|IPS|Sejarah
+12|SMA,MA|IPS|Ekonomi
+13|MA|AGAMA|Al-Quran Hadis
+14|MA|AGAMA|Tafsir
+15|MA|AGAMA|Akidah Akhlak
+16|MA|AGAMA|Fikih
+17|MA|AGAMA|Akhlak
+18|MA|AGAMA|Bahasa Arab
+19|SMK|OTOMOTIF|Teknologi Dasar Otomotif
+20|SMK|OTOMOTIF|Pekerjaan Dasar Teknik Otomotif
+21|SMK|OTOMOTIF|Teknik Listrik Dasar Otomotif
+22|SMK|MULTIMEDIA|Perakitan Komputer dan Sistem operasi
+23|SMK|MULTIMEDIA|Pemprograman dasar
+24|SMK|MULTIMEDIA|Dasar desain grafis
+25|SMK|AKUNTANSI|Simulasi digital
+26|SMK|AKUNTANSI|Etika profesi
+27|SMK|AKUNTANSI|Dasar-dasar perbankan
+28|SMK|AKUNTANSI|Paket program pengolah angka
+32|SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Penanganan Bahan Hasil Pertanian
+33|SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Dasar Proses Pengolahan Pertanian
+34|SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Dasar Pengendalian Mutu Hasil Pertanian
+35|SMK|TEKNIK PENGELOLAAN HASIL PERTANIAN|Keamanan Pangan
+36|SMK|TEKNIK KENDARAAN RINGAN|Teknologi Mekanik
+37|SMK|TEKNIK KENDARAAN RINGAN|Kelistrikan Mesin dan Konversi Energi
+38|SMK|TEKNIK KENDARAAN RINGAN|Mekanika Teknik
+39|SMK|INSTALASI TENAGA LISTRIK|Kerja Bengkel Elektromekanik
+40|SMK|INSTALASI TENAGA LISTRIK|Dasar-dasar Kelistrikan
+41|SMK|PENDINGIN DAN TATA UDARA|Gambar teknik listrik
+42|SMK|PENDINGIN DAN TATA UDARA|Dasar listrik dan elektronika
+43|SMK|PENDINGIN DAN TATA UDARA|Pekerjaan Dasar elektronika
+44|SMK|TEKNIK GAMBAR BANGUNAN|Mekanika Teknik
+45|SMK|TEKNIK GAMBAR BANGUNAN|Ilmu Bangunan
+46|SMK|TEKNIK GAMBAR BANGUNAN|Rencana Anggaran Biaya (RAB)
+47|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Dasar-dasar Budidaya Tanaman
+48|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Alat Mesin Pertanian
+49|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Tanah dan Pupuk
+50|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Perlindungan Tanaman
+51|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Perlindungan Tanaman Tumbuh
+52|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Panen dan Pasca Panen
+53|SMK|AGRIBISNIS TANAMAN PERKEBUNAN|Penyuluhan Pertanian
+54|SMK|TEKNIK KOMPUTER DAN JARINGAN|Perakitan Komputer
+55|SMK|TEKNIK KOMPUTER DAN JARINGAN|Pengelolaan informasi
+56|SMK|TEKNIK KOMPUTER DAN JARINGAN|Sistem informasi
+57|SMK|TEKNIK KOMPUTER DAN JARINGAN|Jaringan Dasar
+58|SMK|TEKNIK KOMPUTER DAN JARINGAN|Pemprograman Web
+59|SMK|TEKNIK AUDIO VIDEO|Teknik Dasar Listrik dan Elektronika
+60|SMK|TEKNIK AUDIO VIDEO|Teknik Audio Vidio
+61|SMK|TEKNIK AUDIO VIDEO|Teknik Penyiaran
+62|SMK|TATA BUSANA|Pengetahuan Tekstil
+63|SMK|TATA BUSANA|Dasar teknologi menjahit
+64|SMK|TATA BUSANA|Dasar Pola
+65|SMK|TATA BUSANA|Dasar Desain
